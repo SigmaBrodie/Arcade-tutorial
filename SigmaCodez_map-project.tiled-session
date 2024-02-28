@@ -1,0 +1,42 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "sigmamap.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "": {
+            "scaleInEditor": 1
+        },
+        "#Tile layer 1": {
+            "dynamicWrapping": true
+        },
+        "sigmamap.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1944,
+                "y": 1528
+            }
+        },
+        "sigmamap.tmx#Tile layer 1": {
+            "scaleInDock": 1
+        }
+    },
+    "last.imagePath": "H:/13DTP/Arcade-tutorial/tiles",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 128,
+    "map.tileWidth": 128,
+    "map.width": 25,
+    "openFiles": [
+        "sigmamap.tmx"
+    ],
+    "project": "SigmaCodez_map-project.tiled-project",
+    "recentFiles": [
+        "sigmamap.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.type": 1
+}

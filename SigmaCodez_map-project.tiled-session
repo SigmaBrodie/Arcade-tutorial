@@ -30,7 +30,7 @@
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 2260,
+                "x": 7544,
                 "y": 1504
             }
         },
@@ -42,19 +42,19 @@
             "scale": 0.21003906249999998,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 2561.428305746699,
-                "y": 1280.7141528733498
+                "x": 1790.1432025292916,
+                "y": 1285.4751720290124
             }
         },
         "sigmamap1.tmx#Tile layer 1": {
             "scaleInDock": 1
         },
         "sigmamap2.tmx": {
-            "scale": 0.9957407407407406,
+            "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 540.3012832434443,
-                "y": 180.7699460665799
+                "x": 1506.0606060606062,
+                "y": 2696.969696969697
             }
         },
         "sigmamap2.tmx#Tile map": {

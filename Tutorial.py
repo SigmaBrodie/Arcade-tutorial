@@ -17,7 +17,8 @@ PLAYER_MOVEMENT_SPEED = 5
 GRAVITY = 1  
 # Speed of player's jump
 PLAYER_JUMP_SPEED = 20  
-
+SPRITE_PIXEL_SIZE = 128
+GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
 
 PLAYER_START_X = 64
 PLAYER_START_Y = 300
@@ -93,7 +94,8 @@ class MyGame(arcade.Window):
         self.player_sprite.center_x = PLAYER_START_X
         self.player_sprite.center_y = PLAYER_START_Y
         self.scene.add_sprite("Player", self.player_sprite)
-
+         # Calculate the right edge of the my_map in pixels
+        self.end_of_map = self.tile_map.width * GRID_PIXEL_SIZE
 
         # --- Other stuff
         # Set the background color
@@ -158,7 +160,7 @@ class MyGame(arcade.Window):
             self.player_sprite.center_x = PLAYER_START_X
             self.player_sprite.center_y = PLAYER_START_Y
 
-            arcade.play_sound(self.game_over)
+            
 
         # Did the player touch something they should not?
 
@@ -167,7 +169,7 @@ class MyGame(arcade.Window):
             self.player_sprite.center_x = PLAYER_START_X
             self.player_sprite.center_y = PLAYER_START_Y
 
-            arcade.play_sound(self.game_over)
+            
 
         # See if the user got to the end of the level
         if self.player_sprite.center_x >= self.end_of_map:

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="5" nextobjectid="1">
+ <editorsettings>
+  <chunksize width="128" height="128"/>
+ </editorsettings>
  <tileset firstgid="1" name="Tile layer 1" tilewidth="128" tileheight="128" tilecount="150" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">

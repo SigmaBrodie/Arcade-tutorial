@@ -28,34 +28,43 @@
         },
         "sigmamap.tmx": {
             "scale": 0.25,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 7544,
-                "y": 1504
+                "x": 116,
+                "y": 1916
             }
         },
         "sigmamap.tmx#Tile layer 1": {
             "dynamicWrapping": false,
             "scaleInDock": 0.25
         },
+        "sigmamap.tmx#Tile map": {
+            "scaleInDock": 1
+        },
         "sigmamap1.tmx": {
             "scale": 0.21003906249999998,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1790.1432025292916,
-                "y": 1285.4751720290124
+                "x": 6713.037009484844,
+                "y": 1171.2107122931006
             }
         },
         "sigmamap1.tmx#Tile layer 1": {
-            "scaleInDock": 1
+            "scaleInDock": 0.33
         },
         "sigmamap2.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
             "scale": 0.33,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1506.0606060606062,
-                "y": 2696.969696969697
+                "x": 1809.0909090909092,
+                "y": 1106.0606060606062
             }
+        },
+        "sigmamap2.tmx#Tile layer 1": {
+            "scaleInDock": 0.33
         },
         "sigmamap2.tmx#Tile map": {
             "scaleInDock": 0.25
@@ -71,8 +80,8 @@
     ],
     "project": "SigmaCodez_map-project.tiled-project",
     "recentFiles": [
-        "level2.tmx",
         "sigmamap.tmx",
+        "level2.tmx",
         "sigmamap1.tmx"
     ],
     "tileset.embedInMap": true,

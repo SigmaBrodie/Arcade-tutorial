@@ -8,9 +8,9 @@ SCREEN_HEIGHT = 650
 # Title of the game window
 SCREEN_TITLE = "Platformer"  
 # Scaling factor for character sprites
-CHARACTER_SCALING = 1 
+CHARACTER_SCALING = 0.5
 # Scaling factor for tile sprites 
-TILE_SCALING = 0.5  
+TILE_SCALING = 0.4
 
 SPRITE_PIXEL_SIZE = 128
 GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
@@ -26,6 +26,7 @@ PLAYER_JUMP_SPEED = 20
 PLAYER_START_X = 64
 PLAYER_START_Y = 300
 # Layer Names from our TileMap
+LAYER_NAME_MOVING_PLATFORMS = "Moving Platforms"
 LAYER_NAME_PLATFORMS = "Platform"
 LAYER_NAME_COINS = "Coins"
 LAYER_NAME_FOREGROUND = "Foreground"
@@ -54,7 +55,7 @@ class MyGame(arcade.Window):
         self.end_of_map = 0
         self.level = 1
 
-        arcade.set_background_color(arcade.csscolor.CORNFLOWER_BLUE)
+        arcade.set_background_color(arcade.csscolor.MEDIUM_PURPLE)
 
     def setup(self):
         """Set up the game."""
@@ -91,6 +92,10 @@ class MyGame(arcade.Window):
 
             },
 
+            LAYER_NAME_MOVING_PLATFORMS: {
+                "use_spatial_hash": False,
+            },
+
             LAYER_NAME_DONT_TOUCH: {
 
                 "use_spatial_hash": True,
@@ -122,7 +127,7 @@ class MyGame(arcade.Window):
         self.scene.add_sprite("Player", self.player_sprite)
         
         
-         # Calculate the right edge of the my_map in pixels
+         # Calculate the right edge of the my_map in pixels                                                                                                                                                                                                 
         self.end_of_map = self.tile_map.width * GRID_PIXEL_SIZE
 
         # --- Other stuff
@@ -136,11 +141,22 @@ class MyGame(arcade.Window):
        #)
        
          # Create the 'physics engine'  -you wern't using the CONSTANT
-        self.physics_engine = arcade.PhysicsEnginePlatformer(
-            self.player_sprite,
-            gravity_constant=GRAVITY,
-            walls=self.scene[LAYER_NAME_PLATFORMS],
-        )
+
+        if self.level == 2:  
+            self.physics_engine = arcade.PhysicsEnginePlatformer(
+                self.player_sprite,
+                platforms=self.scene[LAYER_NAME_MOVING_PLATFORMS],
+                gravity_constant=GRAVITY,
+                walls=self.scene[LAYER_NAME_PLATFORMS],
+                
+            )
+        else:
+            self.physics_engine = arcade.PhysicsEnginePlatformer(
+                self.player_sprite,
+                gravity_constant=GRAVITY,
+                walls=self.scene[LAYER_NAME_PLATFORMS],
+                
+            )
 
 
 
@@ -203,8 +219,10 @@ class MyGame(arcade.Window):
             self.player_sprite.change_y = 0
             self.player_sprite.center_x = PLAYER_START_X
             self.player_sprite.center_y = PLAYER_START_Y
+        if self.level == 2:
+            self.scene.update([LAYER_NAME_MOVING_PLATFORMS])
 
-            
+        
 
         # See if the user got to the end of the level
         if self.player_sprite.center_x >= self.end_of_map:
